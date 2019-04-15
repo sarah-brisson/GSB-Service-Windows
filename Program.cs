@@ -1,29 +1,25 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.ServiceProcess;
+using System.Text;
+using System.Threading.Tasks;
 
-
-namespace Service
+namespace WindowsService1
 {
-    class Program{
-        static void Main(string[] args)
+    static class Program
+    {
+        /// <summary>
+        /// Point d'entrée principal de l'application.
+        /// </summary>
+        static void Main()
         {
-            ConnexionBDD connexionBDD = new ConnexionBDD();
-            // TestGestionDate test = new TestGestionDate();
-            // test.test();
-            connexionBDD.getConnexion();
-            
-            // CLoture des fiches de frais entre le 1er et le 10 du mois
-            if (GestionDates.entre(1, 10)) {
-                string moisPrec = GestionDates.getMoisPrecendent();
-                string requete = "UPDATE fichefrais SET idetat = 'CL' WHERE mois = '" + moisPrec+"'";
-                connexionBDD.requeteAdministration(requete);
-            }
-
-            // Remboursement des fiches validées au 20e du mois
-            if (GestionDates.entre(20, 31)) {
-                string requete = "UPDATE fichefrais SET idetat = 'RB' WHERE idetat = 'VA'";
-                connexionBDD.requeteAdministration(requete);
-            }
+            ServiceBase[] ServicesToRun;
+            ServicesToRun = new ServiceBase[]
+            {
+                new Service.Service1()
+            };
+            ServiceBase.Run(ServicesToRun);
         }
     }
 }

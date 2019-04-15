@@ -15,6 +15,7 @@ namespace Service
     public partial class Service1 : ServiceBase
     {
         Timer timer = new Timer(); 
+        GestionTaches service = new GestionTaches();
         public Service1()
         {
             InitializeComponent();
@@ -22,8 +23,8 @@ namespace Service
 
         protected override void OnStart(string[] args)
         {
+            service.taches();
             Console.WriteLine("Le service a commencé à  " + DateTime.Now);
-
             timer.Elapsed += new ElapsedEventHandler(OnElapsedTime);
             timer.Interval = 86400000; //jour en millisecondes
             timer.Enabled = true;
@@ -31,16 +32,14 @@ namespace Service
 
         protected override void OnStop()
         {
-            WriteToFile("Le service a été arreté à " + DateTime.Now);
+            service.taches();
+            Console.WriteLine("Le service a été arreté à " + DateTime.Now);
         }
 
         private void OnElapsedTime(object source, ElapsedEventArgs e)
         {
-        }
-
-        public void WriteToFile(string Message)
-        {
-
+            service.taches();
+            Console.WriteLine("Rappel du service à " + DateTime.Now);
         }
     }
 }

@@ -39,9 +39,9 @@
             // 
             // serviceInstaller1
             // 
-            this.serviceInstaller1.ServiceName = "Service1";
             this.serviceInstaller1.Description = "Service de gestion de la base de données GSB";
             this.serviceInstaller1.DisplayName = "Gestion BDD GSB";
+            this.serviceInstaller1.ServiceName = "Service1";
             // 
             // ProjectInstaller
             // 
