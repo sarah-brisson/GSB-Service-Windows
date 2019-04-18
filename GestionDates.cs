@@ -7,7 +7,10 @@ namespace Service
     {
         private static DateTime dateAujourdhui = DateTime.Now;
 
-        //retourne le mois précédent au mois actuel
+        /// <summary>
+        /// retourne le mois précédent au mois actuel
+        /// </summary>
+        /// <returns></returns>
         public static string getMoisPrecendent()
         {
             int an = dateAujourdhui.Year;
@@ -15,7 +18,11 @@ namespace Service
             return gestionMoisPrecedent(mois, an);
         }
 
-        //retourne le mois précédent à la date mise en paramètre
+        /// <summary>
+        /// retourne le mois précédent à la date mise en paramètre
+        /// </summary>
+        /// <param name="date"></param>
+        /// <returns></returns>
         public static string getMoisPrecendent(DateTime date)
         {
             int an = date.Year;
@@ -23,7 +30,12 @@ namespace Service
             return gestionMoisPrecedent(mois, an);
         }
 
-        //gère les fonctions getMoisPrecendent
+        /// <summary>
+        /// gère les fonctions getMoisPrecendent
+        /// </summary>
+        /// <param name="mois"></param>
+        /// <param name="an"></param>
+        /// <returns></returns>
         private static string gestionMoisPrecedent(int mois, int an)
         {
             String moisPrecedent;
@@ -45,21 +57,32 @@ namespace Service
             return moisPrecedent;
         }
 
-        //retourne le mois suivant au mois actuel
+        /// <summary>
+        /// retourne le mois suivant au mois actuel
+        /// </summary>
+        /// <returns></returns>
         public static string getMoisSuivant()
         {
             int mois = dateAujourdhui.Month;
             return gestionMoisSuivant(mois);
         }
 
-        //retourne le mois suivant à la date mise en paramètre
+        /// <summary>
+        /// retourne le mois suivant à la date mise en paramètre
+        /// </summary>
+        /// <param name="date"></param>
+        /// <returns></returns>
         public static string getMoisSuivant(DateTime date)
         {
             int mois = date.Month;
             return gestionMoisSuivant(mois);
         }
 
-        //gère les fonctions getMoisSuivant
+        /// <summary>
+        /// gère les fonctions getMoisSuivant
+        /// </summary>
+        /// <param name="mois"></param>
+        /// <returns></returns>
         private static string gestionMoisSuivant(int mois)
         {
             String moisSuivant;
@@ -78,8 +101,13 @@ namespace Service
             return moisSuivant;
         }
 
-        //prend en paramètre deux int de numéros de jours dans le mois dans l'ordre croissant 
-        //retourne vrai si la date actuelle se trouve entre les deux
+        /// <summary>
+        /// prend en paramètre deux int de numéros de jours dans le mois dans l'ordre croissant 
+        /// retourne vrai si la date actuelle se trouve entre les deux
+        /// </summary>
+        /// <param name="jour1"></param>
+        /// <param name="jour2"></param>
+        /// <returns></returns>
         public static Boolean entre(int jour1, int jour2)
         {
             if (dateAujourdhui.Day >= jour1 && dateAujourdhui.Day <= jour2)
@@ -91,6 +119,14 @@ namespace Service
                 return false;
             }
         }
+        /// <summary>
+        /// prend en paramètre deux int de numéros de jours dans le mois dans l'ordre croissant 
+        /// retourne vrai si la date en parametre se trouve entre les deux
+        /// </summary>
+        /// <param name="jour1"></param>
+        /// <param name="jour2"></param>
+        /// <param name="date"></param>
+        /// <returns></returns>
         public static Boolean entre(int jour1, int jour2, DateTime date)
         {
             if (date.Day >= jour1 && date.Day <= jour2)

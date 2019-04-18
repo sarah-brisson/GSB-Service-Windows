@@ -10,14 +10,18 @@ namespace Service
     {
         public static MySqlConnection connexion;
 
-        //instance unique de la connexion
+        /// <summary>
+        /// instance unique de la connexion
+        /// </summary>
         private void connexionBase()
         {
-            String connexionString = "datasource=localhost; database=gsb_frais;username=root;Password=E6gDn3o;";
+            String connexionString = "datasource=localhost; database=gsb_frais;username=administratorgsb;Password=yZJat24N;";
             connexion = new MySqlConnection(connexionString);
         }
 
-        // retourne l'instance de la connexion si elle est crée ou la crée et la retourne
+        /// <summary>
+        /// retourne l'instance de la connexion si elle est crée ou la crée et la retourne
+        /// </summary>
         public void getConnexion()
         {
 
@@ -26,7 +30,10 @@ namespace Service
                 connexionBase();
             }
         }
-
+        /// <summary>
+        /// Execute une requete d'administration (insert, update ou delete)
+        /// </summary>
+        /// <param name="requete"></param>
         public void requeteAdministration(string requete)
         {
             try
@@ -44,6 +51,10 @@ namespace Service
             }
         }
 
+        /// <summary>
+        /// execute et lit une requete de type select
+        /// </summary>
+        /// <param name="requete"></param>
         public void requeteSelect(string requete)
         {
             try

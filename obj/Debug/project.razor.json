@@ -1,0 +1,14 @@
+{
+  "ProjectFilePath": "c:\\Users\\Toutouille\\source\\repos\\WindowsFormsApp1\\WindowsFormsApp1\\Service.csproj",
+  "TargetFramework": "v4.7.2",
+  "TagHelpers": [],
+  "Configuration": {
+    "ConfigurationName": "UnsupportedRazor",
+    "LanguageVersion": "1.0",
+    "Extensions": [
+      {
+        "ExtensionName": "UnsupportedRazorExtension"
+      }
+    ]
+  }
+}

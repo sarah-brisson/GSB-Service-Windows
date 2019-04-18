@@ -11,3 +11,4 @@ C:\Users\Toutouille\source\repos\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\Ser
 C:\Users\Toutouille\source\repos\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\Service.exe
 C:\Users\Toutouille\source\repos\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\Service.pdb
 C:\Users\Toutouille\source\repos\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\Service.ProjectInstaller.resources
+C:\Users\Toutouille\source\repos\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\Service.csprojAssemblyReference.cache
